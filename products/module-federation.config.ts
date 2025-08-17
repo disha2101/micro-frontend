@@ -1,5 +1,8 @@
 export const mfConfig = {
   name: "products",
-  exposes: {},
-  shared: ["react", "react-dom"],
+  filename: "remoteEntry.js",
+  exposes: {
+    "./ProductsIndex": "./src/bootstrap",
+  },
+  shared:["react","react-dom","react-icons"],
 };

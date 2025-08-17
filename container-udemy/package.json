@@ -2,10 +2,10 @@
   "name": "micro-frontend",
   "version": "0.0.1",
   "scripts": {
-    "build": "NODE_ENV=production rspack build",
+    "build": "webpack",
     "build:dev": "NODE_ENV=development rspack build",
     "build:start": "cd dist && rspack serve",
-    "start": "webpack serve"
+    "start": "webpack serve --config webpack.config.js"
   },
   "devDependencies": {
     "@rspack/cli": "~1.2.0",

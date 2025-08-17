@@ -1,10 +1,10 @@
-import ReactDOM from "react-dom/client";
+import {createRoot} from "react-dom/client";
 import App from "./App";
 import "./index.css";
 import React from "react";
 
 const mount = (el: HTMLElement) => {
-  const root = ReactDOM.createRoot(el);
+  const root = createRoot(el);
   root.render(<App />);
   return () => root.unmount(); // allows cleanup if needed
 };

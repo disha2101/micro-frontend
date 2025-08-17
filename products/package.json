@@ -2,7 +2,7 @@
   "name": "products",
   "version": "0.0.1",
   "scripts": {
-    "start": "webpack serve",
+    "start": "webpack serve --config webpack.config.js",
     "build": "webpack "
   },
   "devDependencies": {

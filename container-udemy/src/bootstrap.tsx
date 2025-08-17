@@ -12,20 +12,33 @@ if (devRoot) {
   mount(devRoot);
 }
 
-// Load remotes dynamically
 import("products/ProductsIndex")
-  .then(({ mount }) => {
-    const el = document.getElementById("products");
-    if (el) mount(el);
+  .then(({mount}) => {
+    if(mount) {
+      const el = document.getElementById("items");
+      if (el) mount(el);
+    } else {
+      console.error("products/ProductsIndex did not export mount");
+    }
   })
-  .catch(console.error);
+  .catch(((err) => {
+    console.error("Error loading ProductsIndex", err)
+  }));
+
+  
 
 import("items/ItemsIndex")
-  .then(({ mount }) => {
-    const el = document.getElementById("items");
-    if (el) mount(el);
+  .then(({mount}) => {
+    if(mount) {
+      const el = document.getElementById("items");
+      if (el) mount(el);
+    } else {
+      console.error("items/ItemsIndex did not export mount");
+    }
   })
-  .catch(console.error);
+  .catch(((err) => {
+    console.error("Error loading ItemsIndex", err)
+  }));
 
 
 // Expose mount so host can call it when remote is loaded
