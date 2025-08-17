@@ -2,14 +2,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const path = require('path');
 const mfConfig = require('./module-federation.config.ts');
+const { merge } = require('webpack-merge');
+const commonConfig = require('./webpack.common.js');
 
-module.exports = {
+devConfig = {
     mode: 'development',
   entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: "auto",
     clean: true,
   },
   resolve: {
@@ -24,12 +25,14 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin(mfConfig),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'public', 'index.html'),
+      template: path.resolve(__dirname, "../public/index.html"),
     }),
   ],
   devServer: {
-    port: 3001,
+    port: 3000,
     open: true,
     hot: true,
   },
 };
+
+module.exports = merge(commonConfig, devConfig);
