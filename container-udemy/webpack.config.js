@@ -21,16 +21,16 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'container-udemy',
-      filename: 'remoteEntry.js',
-      exposes: {
-        './ContainerIndex': './src/index',
-      },
+      name: 'container_udemy',
       remotes: {
         products: 'products@http://localhost:3001/remoteEntry.js',
         items: 'items@http://localhost:3002/remoteEntry.js',
       },
-      shared: { react: { singleton: true }, "react-dom": { singleton: true } }
+      shared: {
+        react: { singleton: true, requiredVersion: false },
+        "react-dom": { singleton: true, requiredVersion: false },
+        'react-icons': { singleton: true, requiredVersion: false },
+      },
 
     }),
     new HtmlWebpackPlugin({

@@ -7,4 +7,9 @@ const mount = (el: HTMLElement) => {
   root.render(<App />);
 };
 
+const devRoot = document.getElementById("products");
+if (devRoot) {
+  mount(devRoot);
+}
+
 export { mount };

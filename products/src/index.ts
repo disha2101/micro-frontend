@@ -1,7 +1,4 @@
 // src/index.ts
-import { mount } from "./bootstrap";
+import("./bootstrap");
 
-const devRoot = document.getElementById("products");
-if (devRoot) {
-  mount(devRoot);
-}
+

@@ -28,8 +28,8 @@ module.exports = {
         "./ProductsIndex": "./src/bootstrap",
       },
       shared: {
-        react: { singleton: true },
-        "react-dom": { singleton: true }
+        react: { singleton: true, requiredVersion: false },
+        "react-dom": { singleton: true, requiredVersion: false }
       },
     }),
     new HtmlWebpackPlugin({
