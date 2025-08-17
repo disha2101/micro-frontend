@@ -1,6 +1,6 @@
 export const mfConfig = {
   name: "products",
-  filename: "remoteEntry.js",
+  filename: "productsRemoteEntry.js",
   exposes: {
     "./ProductsIndex": "./src/bootstrap",
   },

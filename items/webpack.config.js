@@ -30,7 +30,7 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: "items",
-      filename: "remoteEntry.js",
+      filename: "itemsRemoteEntry.js",
       exposes: {
         "./ItemsIndex": "./src/bootstrap",
       },

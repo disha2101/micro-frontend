@@ -23,8 +23,8 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'container_udemy',
       remotes: {
-        products: 'products@http://localhost:3001/remoteEntry.js',
-        items: 'items@http://localhost:3002/remoteEntry.js',
+        products: 'products@http://localhost:3001/productsRemoteEntry.js',
+        items: 'items@http://localhost:3002/itemsRemoteEntry.js',
       },
       shared: {
         react: { singleton: true, requiredVersion: false },
