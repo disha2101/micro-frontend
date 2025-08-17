@@ -5,7 +5,8 @@
     "build": "webpack",
     "build:dev": "NODE_ENV=development rspack build",
     "build:start": "cd dist && rspack serve",
-    "start:dev": "webpack serve --config config/webpack.dev.js"
+    "start:dev": "webpack serve --config config/webpack.dev.js",
+    "start:prod": "webpack serve --config config/webpack.prod.js"
   },
   "devDependencies": {
     "@babel/core": "^7.28.3",
