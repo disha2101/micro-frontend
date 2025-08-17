@@ -1,8 +1,8 @@
-export const mfConfig = {
-  name: "products",
-  filename: "productsRemoteEntry.js",
+module.exports = {
+  name: "cart",
+  filename: "cartsRemoteEntry.js",
   exposes: {
-    "./ProductsIndex": "./src/bootstrap",
+    "./CartsIndex": "./src/bootstrap",
   },
   shared:["react","react-dom","react-icons"],
 };

@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const path = require("path");
+const mfConfig = require("./module-federation.config");
 
 module.exports = {
   mode: "development",
@@ -28,18 +29,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new ModuleFederationPlugin({
-      name: "items",
-      filename: "itemsRemoteEntry.js",
-      exposes: {
-        "./ItemsIndex": "./src/bootstrap",
-      },
-      shared: {
-        react: { singleton: true },
-        "react-dom": { singleton: true },
-        "react-icons": { singleton: true, requiredVersion: false },
-      },
-    }),
+    new ModuleFederationPlugin(mfConfig),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "public", "index.html"),
     }),

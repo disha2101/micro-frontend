@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const path = require('path');
+const mfConfig = require('./module-federation.config');
 
 module.exports = {
     mode: 'development',
@@ -20,19 +21,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new ModuleFederationPlugin({
-      name: 'container_udemy',
-      remotes: {
-        products: 'products@http://localhost:3001/productsRemoteEntry.js',
-        items: 'items@http://localhost:3002/itemsRemoteEntry.js',
-      },
-      shared: {
-        react: { singleton: true, requiredVersion: false },
-        "react-dom": { singleton: true, requiredVersion: false },
-        'react-icons': { singleton: true, requiredVersion: false },
-      },
-
-    }),
+    new ModuleFederationPlugin(mfConfig),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public', 'index.html'),
     }),

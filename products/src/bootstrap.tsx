@@ -1,14 +1,17 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import {createRoot,Root} from "react-dom/client";
 import App from "./App";
 import "./index.css";
 
 const mount = (el: Element) => {
-  const root = ReactDOM.createRoot(el);
+  let root: Root | null = null;
+  if (!root) {
+    root = createRoot(el);
+  }
   root.render(<App />);
 };
 
-const devRoot = document.getElementById("products");
+const devRoot = document.getElementById("cart");
 if (devRoot) {
   mount(devRoot);
 }

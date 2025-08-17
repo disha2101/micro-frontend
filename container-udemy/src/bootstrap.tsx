@@ -1,9 +1,12 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
+import { createRoot,Root } from "react-dom/client";
 import App from "./App";
 
 const mount = (el: HTMLElement) => {
-  const root = createRoot(el);
+  let root: Root | null = null;
+  if (!root) {
+    root = createRoot(el);
+  }
   root.render(<App />);
 };
 
@@ -12,17 +15,17 @@ if (devRoot) {
   mount(devRoot);
 }
 
-import("products/ProductsIndex")
+import("cart/CartsIndex")
   .then(({mount}) => {
     if(mount) {
       const el = document.getElementById("items");
       if (el) mount(el);
     } else {
-      console.error("products/ProductsIndex did not export mount");
+      console.error("cart/CartsIndex did not export mount");
     }
   })
   .catch(((err) => {
-    console.error("Error loading ProductsIndex", err)
+    console.error("Error loading CartsIndex", err)
   }));
 
   

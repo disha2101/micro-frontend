@@ -1,4 +1,4 @@
-export const mfConfig = {
+module.exports = {
       name: "items",
       filename: "itemsRemoteEntry.js",
       exposes: {
