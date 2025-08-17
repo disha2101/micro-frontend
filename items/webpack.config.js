@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const path = require("path");
-const mfConfig = require("./module-federation.config");
+const mfConfig = require("./module-federation.config.ts");
 
 module.exports = {
   mode: "development",
