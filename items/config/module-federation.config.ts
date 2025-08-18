@@ -1,8 +1,9 @@
+const itemsPackageJSON = require("../package.json");
 module.exports = {
       name: "items",
       filename: "itemsRemoteEntry.js",
       exposes: {
         "./ItemsIndex": "./src/bootstrap",
       },
-      shared: ["react", "react-dom","react-icons","react-router-dom"],
+      shared: itemsPackageJSON.dependencies,
     };
