@@ -4,5 +4,5 @@ module.exports = {
       exposes: {
         "./ItemsIndex": "./src/bootstrap",
       },
-      shared: ["react", "react-dom","react-icons"],
+      shared: ["react", "react-dom","react-icons","react-router-dom"],
     };
