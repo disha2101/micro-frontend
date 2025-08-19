@@ -1,4 +1,3 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const path = require("path");
 const mfConfig = require("./module-federation.config.ts");
@@ -25,9 +24,7 @@ const devConfig = {
   },
   plugins: [
     new ModuleFederationPlugin(mfConfig),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "../public/index.html"),
-    }),
+
   ],
   devServer: {
     port: 3001,

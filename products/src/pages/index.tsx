@@ -18,15 +18,13 @@ const Index = () => {
   const { items } = useAppSelector((state) => state.products);
   return (
     <div className="container mx-auto py-6">
-      <Heading mb={6} size="lg">
+      <Heading mb={6} w="fit-content" size="lg" borderBottom={'1px solid'} borderColor="#e2e8f2" pb={1}>
         Featured Products
       </Heading>
       <Flex
         wrap="wrap"
         gap={6}
         align="center"
-        border="1px solid #e2e8f0"
-        borderRadius={"10px"}
         p={4}
       >
         {products.map((product, key) => (
@@ -66,7 +64,7 @@ const Index = () => {
         {items && items.length > 0 && (
           <Box
             w="full"
-            maxW="md"
+            maxW="lg"
             bg="white"
             rounded="2xl"
             shadow="md"
@@ -79,14 +77,14 @@ const Index = () => {
 
             <Divider mb={4} />
 
-            <Flex justify="space-around" align="center" wrap="wrap" gap={6}>
+            <Flex justify={'space-between'} align={'center'} alignItems={'center'} wrap="wrap" gap={6}>
               <Stat>
                 <StatLabel>Products Added</StatLabel>
                 <StatNumber>
                   {items.map((p) => p.quantity).reduce((a, b) => a + b, 0)}
                 </StatNumber>
                 <StatHelpText>
-                  <Badge colorScheme="teal" px={2} py={1} rounded="full">
+                  <Badge colorScheme="teal" textTransform={'none'} px={2} py={1} rounded="full">
                     In your cart
                   </Badge>
                 </StatHelpText>
@@ -101,6 +99,13 @@ const Index = () => {
                     .reduce((a, b) => a + b, 0)}
                 </StatNumber>
                 <StatHelpText>Incl. all items</StatHelpText>
+              </Stat>
+              <Stat>
+                <StatLabel>Unique Products</StatLabel>
+                <StatNumber>{items.length}</StatNumber>
+                <StatHelpText>
+                  {items.length > 1 ? "Different products" : "Single product"}
+                </StatHelpText>
               </Stat>
             </Flex>
           </Box>
