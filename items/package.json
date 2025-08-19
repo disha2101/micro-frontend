@@ -4,7 +4,8 @@
   "scripts": {
     "start:dev": "webpack serve --config config/webpack.dev.js",
     "start:prod": "webpack serve --config config/webpack.prod.js",
-    "build": "webpack "
+    "build:prod": "webpack --config config/webpack.prod.js",
+    "build:dev": "webpack --config config/webpack.dev.js"
   },
   "devDependencies": {
     "@babel/core": "^7.28.3",

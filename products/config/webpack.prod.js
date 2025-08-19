@@ -1,16 +1,13 @@
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
-const path = require('path');
 const mfConfig = require('./module-federation.config.ts');
 const { merge } = require('webpack-merge');
 const commonConfig = require('./webpack.common.js');
 
 prodConfig = {
-    mode: 'production',
+  mode: 'production',
   entry: './src/index.ts',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
-    clean: true,
+    filename: '[name].[contenthash].js',
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],

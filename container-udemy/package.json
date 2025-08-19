@@ -2,9 +2,8 @@
   "name": "micro-frontend",
   "version": "0.0.1",
   "scripts": {
-    "build": "webpack",
-    "build:dev": "NODE_ENV=development rspack build",
-    "build:start": "cd dist && rspack serve",
+    "build:prod": "webpack --config config/webpack.prod.js",
+    "build:dev": "webpack --config config/webpack.dev.js",
     "start:dev": "webpack serve --config config/webpack.dev.js",
     "start:prod": "webpack serve --config config/webpack.prod.js"
   },
