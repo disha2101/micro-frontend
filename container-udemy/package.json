@@ -2,7 +2,7 @@
   "name": "micro-frontend",
   "version": "0.0.1",
   "scripts": {
-    "build:prod": "webpack --config config/webpack.prod.js",
+    "build": "webpack --config config/webpack.prod.js",
     "build:dev": "webpack --config config/webpack.dev.js",
     "start:dev": "webpack serve --config config/webpack.dev.js",
     "start:prod": "webpack serve --config config/webpack.prod.js"
